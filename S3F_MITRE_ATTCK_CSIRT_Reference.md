@@ -41,4 +41,4 @@ This resource maps each phase of the Social 3ngineering Framework to correspondi
 - Integrate as a trust overlay on ATT&CK Navigator
 - Align phase-to-technique mapping in detection dashboards
 
-Maintainer: ckittner@proofpoint.com
+Maintainer: cbkittner@gmail.com
