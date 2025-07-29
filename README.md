@@ -1,6 +1,6 @@
 # 🧠 Social 3ngineering Framework (S3F)
 
-Welcome to the official GitHub repository for the Social 3ngineering Framework (S3F), a behavioral cybersecurity framework focused on trust manipulation tactics used in social engineering attacks.
+Welcome to the Social 3ngineering Framework (S3F), a behavioral cybersecurity framework focused the human factor in cybersecurity, specifically, on trust manipulation tactics used in social engineering attacks.
 
 ---
 
@@ -17,15 +17,13 @@ Welcome to the official GitHub repository for the Social 3ngineering Framework (
 
 ## 🧠 About S3F
 
-S3F dissects the behavioral phases of trust abuse:
+S3F dissects the various phases of Trust Cycle:
 - Reconnaissance
 - Pretexting & Deception
 - Initial Contact
 - Manipulate Trust
 - Exploit Trust
 - Weaponize Trust
-
-Learn how to integrate it into red team operations, SOC runbooks, executive awareness, and resilience programs.
 
 ---
 
