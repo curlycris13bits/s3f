@@ -9,7 +9,9 @@ Welcome to the official GitHub repository for the Social 3ngineering Framework (
 | Resource Type | File | Description |
 |---------------|------|-------------|
 | MITRE Mapping | [S3F_MITRE_ATTCK_CSIRT_Reference.md](S3F_MITRE_ATTCK_CSIRT_Reference.md) | ATT&CK-aligned tactics for technical teams |
+| S3F TTPs| [S3F_TTPs.md](S3F_TTPs.md) | Social 3ngineering TTPs Hierarchy |
 | Playbook | [S3F_SOC_Playbook.md](S3F_SOC_Playbook.md) | Incident response snippet with phase tags |
+
 
 
 
