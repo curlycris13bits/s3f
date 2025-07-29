@@ -34,5 +34,5 @@ Learn how to integrate it into red team operations, SOC runbooks, executive awar
 
 ---
 
-📬 Maintained by ckittner@proofpoint.com  
+📬 Maintained by cbkittner@gmail.com  
 🔗 Fork and contribute your playbooks, simulations, or tools!
