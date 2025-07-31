@@ -1,12 +1,11 @@
-S3F Data Schema
+S3F TTP Hierarchy
+1.Tactic
 
-1. Tactic
+1.1Techniques
 
-1.1 Techniques
+   1.1.1 ****Sub-Techniques
 
-1.1.1 Sub-Techniques
-
-For dictionary and use cases, see
+For dictionary and use cases, see:
 
 1. Tactic: Reconnaissance
 
