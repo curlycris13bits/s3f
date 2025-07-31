@@ -12,6 +12,8 @@ Welcome to the Social 3ngineering Framework (S3F), a behavioral cybersecurity fr
 | S3F TTPs| [S3F_TTPs.md](S3F_TTPs.md) | Social 3ngineering TTPs Hierarchy |
 | Playbook | [S3F_SOC_Playbook.md](S3F_SOC_Playbook.md) | Incident response snippet with phase tags |
 
+<img src="S3F%20Overlay%20Visual.png" style="margin-left:20px;" width="400">
+
 
 
 
