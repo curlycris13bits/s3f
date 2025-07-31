@@ -19,13 +19,15 @@ Welcome to the Social 3ngineering Framework (S3F), a behavioral cybersecurity fr
 
 ## 🧠 About S3F
 
-S3F dissects the various phases of Trust Cycle:
+S3F breaks down the various phases of Trust Cycle similarly to MITRE ATT&CK, Lockheed Martin's Cyber Kill Chain, and others, in the following Tactics:
 - Reconnaissance
 - Pretexting & Deception
 - Initial Contact
 - Manipulate Trust
 - Exploit Trust
 - Weaponize Trust
+
+Each Tactic consists of a number of Techniques, and Sub-Techniques that can be found on the TTP Dictionary.
 
 ---
 
