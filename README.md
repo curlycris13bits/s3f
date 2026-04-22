@@ -1,6 +1,6 @@
 # 🧠 Social 3ngineering Framework (S3F)
 
-Welcome to the Social 3ngineering Framework (S3F), a behavioral cybersecurity framework focused the human factor in cybersecurity, specifically, on trust manipulation tactics used in social engineering attacks.
+Welcome to the Social 3ngineering Framework (S3F), a behavioral cybersecurity framework focused on the human factor in cybersecurity, specifically, on trust manipulation tactics used in social engineering attacks.
 
 ---
 
