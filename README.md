@@ -31,5 +31,5 @@ Each Tactic consists of a number of Techniques, and Sub-Techniques that can be f
 
 ---
 
-📬 Maintained by [curlcris13bits](https://github.com/curlycris13bits) & [mshelton](https://github.com/mshelton)
+📬 Maintained by [curlycris13bits](https://github.com/curlycris13bits) & [mshelton](https://github.com/mshelton)
 🔗 Fork and contribute your playbooks, simulations, or tools!
