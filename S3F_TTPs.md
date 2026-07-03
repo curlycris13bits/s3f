@@ -63,13 +63,13 @@ This document outlines a Threat Intelligence Platform (TIP) hierarchy based on T
 ### 1.6 Physical Surveillance
 
 *   **Purpose:** Observing targets in their natural environment.
-    *   **1.7.1 Observation of Routines:** Tracking a target's daily activities.
-    *   **1.7.2 Building Layout Mapping:** Creating maps of buildings and facilities.
-    *   **1.7.3 Security Camera Identification/Access:** Identifying and potentially accessing security camera feeds.
-    *   **1.7.4 Access Control System Analysis:** Analyzing access control systems to identify vulnerabilities.
-    *   **1.7.5 Employee Behavior Monitoring:** Observing employee behavior for patterns or anomalies.
-    *   **1.7.6 Entry and Exit Point Analysis:**  Mapping entry and exit points of a location.
-    *   **1.7.7 Vehicle Tracking:** Monitoring vehicle movements.
+    *   **1.6.1 Observation of Routines:** Tracking a target's daily activities.
+    *   **1.6.2 Building Layout Mapping:** Creating maps of buildings and facilities.
+    *   **1.6.3 Security Camera Identification/Access:** Identifying and potentially accessing security camera feeds.
+    *   **1.6.4 Access Control System Analysis:** Analyzing access control systems to identify vulnerabilities.
+    *   **1.6.5 Employee Behavior Monitoring:** Observing employee behavior for patterns or anomalies.
+    *   **1.6.6 Entry and Exit Point Analysis:**  Mapping entry and exit points of a location.
+    *   **1.6.7 Vehicle Tracking:** Monitoring vehicle movements.
 
 ## 2. Tactic: Pretexting
 
@@ -157,7 +157,7 @@ This document outlines a Threat Intelligence Platform (TIP) hierarchy based on T
     * **3.1.4 Exploiting Trust Relationships**
     * **3.1.5 Custom Malicious Attachments**
     * **3.1.6 Specific Project References**
-    * *3.1.7 Impersonating Known Contacts*
+    * **3.1.7 Impersonating Known Contacts**
 
 ### 3.2 Social Engineering Requests
 
@@ -219,6 +219,7 @@ This document outlines a Threat Intelligence Platform (TIP) hierarchy based on T
 * **4.2.4 Celebrity Influence:** Leveraging the popularity of celebrities.
 * **4.2.5 Official Communication:**  Presenting information as official.
 * **4.2.6 Perceived Status:**  Creating an impression of high status.
+* **4.2.7 Organizational Hierarchy:** Exploiting deference to higher-ranking positions.
 
 ### 4.3 Social Proof
 
@@ -228,13 +229,15 @@ This document outlines a Threat Intelligence Platform (TIP) hierarchy based on T
 * **4.3.4 Endorsements:** Obtaining endorsements from trusted sources.
 * **4.3.5 Community Engagement:** Demonstrating active participation in a community.
 
-### 4.4 Reciprocity
+### 4.4 Liking & Rapport
 
 * **4.4.1 Mirroring:**  Mimicking the target’s behavior or language.
 * **4.4.2 Similarity/Common Ground:** Finding shared interests or values.
 * **4.4.3 Compliments:** Offering sincere praise.
 * **4.4.4 Cooperation:** Working collaboratively with the target.
-* **4.4.6 Indebtedness Creation:**  Providing favors to create a sense of obligation.
+* **4.4.5 Building Trust:** Establishing credibility and reliability over time.
+* **4.4.6 Active Listening:** Demonstrating genuine interest in the target’s concerns.
+* **4.4.7 Charm & Charisma:** Using personal appeal to influence the target.
 
 ### 4.5 Commitment & Consistency
 
@@ -251,6 +254,9 @@ This document outlines a Threat Intelligence Platform (TIP) hierarchy based on T
 * **4.6.2 Concessions:** Making concessions to build goodwill.
 * **4.6.3 “Free Samples”:** Providing free samples to encourage purchases.
 * **4.6.4 Indebtedness Creation:**  Creating a sense of obligation for future favors.
+* **4.6.5 Obligation Exploitation:** Leveraging existing obligations or debts.
+* **4.6.6 Reciprocal Disclosure:** Sharing information to encourage the target to reciprocate.
+* **4.6.7 Door-in-the-Face Technique:** Making a large request first, then a smaller one that seems reasonable.
 
 ## 5. Tactic: Exploit Trust
 
@@ -283,12 +289,13 @@ This document outlines a Threat Intelligence Platform (TIP) hierarchy based on T
 
 ### 5.4 Unsecured Systems
 
-* **5.5.1 Default Open Systems/DBs:** Using default credentials and settings.
-* **5.5.2 Unpatched Systems/Lack of Software Updates:** Failing to apply security patches.
-* **5.5.3 Misconfigurations:**  Improperly configured systems.
-* **5.5.5 Lack of Encryption:** Not encrypting sensitive data.
-* **5.5.6 Weak Authentication:** Using weak passwords or authentication methods.
-* **5.5.7 Outdated Software:** Utilizing outdated software with known vulnerabilities.
+* **5.4.1 Default Open Systems/DBs:** Using default credentials and settings.
+* **5.4.2 Unpatched Systems/Lack of Software Updates:** Failing to apply security patches.
+* **5.4.3 Misconfigurations:**  Improperly configured systems.
+* **5.4.4 Unsecured APIs:** Exploiting poorly secured application programming interfaces.
+* **5.4.5 Lack of Encryption:** Not encrypting sensitive data.
+* **5.4.6 Weak Authentication:** Using weak passwords or authentication methods.
+* **5.4.7 Outdated Software:** Utilizing outdated software with known vulnerabilities.
 
 ## 6. Tactic: Weaponize Trust
 
@@ -323,12 +330,17 @@ This document outlines a Threat Intelligence Platform (TIP) hierarchy based on T
 * **6.4.1 Gaslighting:** Making someone question their own sanity or perception of reality.
 * **6.4.2 Love Bombing:** Overwhelming someone with affection and attention early in a relationship.
 * **6.4.3 Guilt Tripping:**  Making someone feel guilty to manipulate their behavior.
+* **6.4.4 Isolation:** Separating the target from support networks to increase dependency.
+* **6.4.5 Triangulation:** Using third parties to manipulate or control the target.
 * **6.4.6 Creating Dependency:** Making someone reliant on another person or system.
 * **6.4.7 Coercion:** Using threats or pressure to force compliance.
 
-### 6.6 Trust as a Vulnerability
+### 6.5 Trust as a Vulnerability
 
-* **6.6.1 Exploiting Kindness**
-* **6.6.2 Creating a Sense of Obligation**
-   * **6.6.4 Using Personal Relationships**
-    * **6.6.5 Taking Advantage of Politeness**
+* **6.5.1 Exploiting Kindness:** Taking advantage of compassionate and helpful behavior.
+* **6.5.2 Creating a Sense of Obligation:** Making the target feel indebted or responsible.
+* **6.5.3 Exploiting Professional Courtesy:** Leveraging workplace politeness and professionalism.
+* **6.5.4 Using Personal Relationships:** Abusing established personal connections and trust.
+* **6.5.5 Taking Advantage of Politeness:** Exploiting social norms and reluctance to refuse.
+* **6.5.6 Leveraging Cultural Norms:** Using cultural expectations to gain compliance.
+* **6.5.7 Exploiting Altruism:** Manipulating charitable or selfless tendencies.
