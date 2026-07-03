@@ -1,0 +1,116 @@
+// S3F Phase 6: Business Email Compromise (BEC) Detection
+//
+// Description: Detects coordinated Business Email Compromise campaigns targeting
+//              finance/payment personnel with fraudulent payment requests.
+// S3F Phase: 6 (Weaponize Trust)
+// S3F Technique: 6.6 (Trust as a Vulnerability)
+// MITRE ATT&CK: T1566.002 (Phishing: Spearphishing Link), T1598 (Phishing for Information)
+// Severity: Critical
+//
+// Prerequisites:
+// - Microsoft 365 email logs in Sentinel
+// - EmailEvents table available
+// - 30+ days of historical data for baseline
+//
+// False Positives:
+// - Legitimate vendor payment reminders
+// - Internal finance communications
+// - End-of-quarter payment rushes
+//
+// Tuning:
+// 1. Adjust keyword lists for your organization
+// 2. Update recipient filters for your finance team
+// 3. Consider adding sender reputation scoring
+// 4. Implement business hours filtering
+
+// Detection Query
+EmailEvents
+| where TimeGenerated > ago(24h)
+| where Subject has_any ("payment", "invoice", "wire transfer", "urgent payment", "account payable", "remittance", "payment change", "banking details", "update payment")
+| where SenderFromDomain !in~ ("yourcompany.com", "trustedvendor1.com", "trustedvendor2.com")
+| where RecipientEmailAddress has_any ("finance@", "payable", "accounts-payable", "ap@", "controller", "accounting@", "payments@", "treasurer")
+    or RecipientEmailAddress in ("cfo@yourcompany.com", "ceo@yourcompany.com")
+| extend HasAttachment = iff(AttachmentCount > 0, true, false)
+| extend UrgencyKeywords = iff(Subject has_any ("urgent", "immediate", "asap", "today", "now", "critical"), true, false)
+| extend FinancialKeywords = iff(Body has_any ("wire", "$", "USD", "bank account", "routing number", "swift", "iban", "account number"), true, false)
+| extend ExternalSender = iff(SenderFromDomain !~ "yourcompany.com", true, false)
+| extend RiskScore =
+    case(
+        UrgencyKeywords and FinancialKeywords and HasAttachment, 90,
+        UrgencyKeywords and FinancialKeywords, 75,
+        FinancialKeywords and HasAttachment, 70,
+        UrgencyKeywords or FinancialKeywords, 50,
+        30
+    )
+| where RiskScore >= 70
+| summarize
+    UniqueRecipients = dcount(RecipientEmailAddress),
+    TotalEmails = count(),
+    FirstSeen = min(TimeGenerated),
+    LastSeen = max(TimeGenerated),
+    Recipients = make_set(RecipientEmailAddress),
+    Subjects = make_set(Subject)
+    by SenderFromAddress, SenderFromDomain, RiskScore
+| where UniqueRecipients >= 2 or TotalEmails >= 5
+| extend
+    S3F_Phase = "6.6",
+    S3F_Technique = "Weaponize_Trust",
+    MITRE_ATT&CK = "T1566.002",
+    Severity = case(
+        RiskScore >= 90 or UniqueRecipients >= 5, "Critical",
+        RiskScore >= 75 or UniqueRecipients >= 3, "High",
+        "Medium"
+    )
+| project
+    TimeGenerated = LastSeen,
+    SenderFromAddress,
+    SenderFromDomain,
+    Recipients,
+    UniqueRecipients,
+    TotalEmails,
+    RiskScore,
+    Severity,
+    S3F_Phase,
+    S3F_Technique,
+    MITRE_ATT&CK,
+    FirstSeen,
+    LastSeen,
+    Subjects
+| sort by RiskScore desc, UniqueRecipients desc
+
+// Alert Configuration
+// -------------------
+// Query Frequency: Every 15 minutes
+// Query Period: Look back 24 hours
+// Trigger Threshold: Results > 0
+// Suppression: 6 hours (per SenderFromDomain)
+//
+// Alert Grouping:
+// - Group by: SenderFromDomain
+// - Reopen closed incidents: No
+//
+// Automated Response (Playbook):
+// 1. Quarantine all emails from sender
+// 2. Alert all recipients via Teams
+// 3. Create high-priority incident
+// 4. Notify CISO and CFO
+// 5. Block sender domain at email gateway
+// 6. Add sender to threat intel
+//
+// Investigation Actions:
+// 1. Verify sender identity (callback to known number)
+// 2. Check if any wire transfers were initiated
+// 3. Review recipient responses
+// 4. Search for similar campaigns
+// 5. Coordinate with Legal if fraud occurred
+//
+// Hunting Queries:
+// - Search for emails from sender in past 90 days
+// - Check for other variants of domain
+// - Look for display name spoofing of executives
+//
+// Custom Details:
+// - AlertRiskScore: RiskScore
+// - TargetedUsers: Recipients
+// - CampaignSize: UniqueRecipients
+// - AttackVector: "BEC / Wire Fraud"

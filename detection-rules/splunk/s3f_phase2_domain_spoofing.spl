@@ -1,0 +1,63 @@
+## S3F Phase 2: Domain Spoofing / Typosquatting Detection
+##
+## Description: Detects emails from domains similar to your organization's domain
+## S3F Phase: 2 (Pretexting & Deception)
+## S3F Technique: 2.1 (Impersonation)
+## MITRE ATT&CK: T1566.001 (Phishing: Spear Phishing Attachment)
+## Severity: High
+##
+## Prerequisites:
+## - Email gateway logs ingested to Splunk
+## - Index: email (adjust as needed)
+## - Fields: sender_domain, recipient, subject, sender_email
+##
+## False Positives:
+## - Legitimate partner domains with similar names
+## - Sister companies or subsidiaries
+## - Acquired companies
+##
+## Tuning:
+## 1. Replace "yourcompany.com" with your actual domain
+## 2. Add known partner domains to whitelist
+## 3. Adjust Levenshtein distance threshold (currently 2)
+## 4. Consider adding reputation scoring
+
+index=email sourcetype=email_gateway
+| rex field=sender_email "(?<sender_domain>[^@]+)$"
+| eval org_domain="yourcompany.com"
+| eval distance=levenshtein(sender_domain, org_domain)
+| where distance <= 2 AND sender_domain != org_domain
+| search NOT [| inputlookup whitelist_domains.csv | fields domain | rename domain as sender_domain]
+| eval risk_score = case(
+    distance == 1, 90,
+    distance == 2, 70,
+    1==1, 50
+  )
+| eval s3f_phase="2.1"
+| eval s3f_technique="Impersonation"
+| eval severity="high"
+| eval mitre_attack="T1566.001"
+| table _time, sender_email, sender_domain, recipient, subject, distance, risk_score, s3f_phase, severity
+| sort - risk_score
+
+## Alert Configuration (Splunk Enterprise Security)
+## --------------------------------------------------
+## Alert Trigger: Number of Results > 0
+## Throttle: 1 hour (per sender_domain)
+## Alert Actions:
+##   - Send email to SOC
+##   - Create notable event
+##   - Quarantine email (via integration)
+##
+## Notable Event Fields:
+##   - urgency: high
+##   - owner: unassigned
+##   - status: new
+##   - category: phishing
+##
+## Response Actions:
+##   1. Quarantine all emails from sender_domain
+##   2. Alert recipients who received the email
+##   3. Check if anyone clicked links or replied
+##   4. Report domain to abuse contacts / registrar
+##   5. Update threat intel with malicious domain
