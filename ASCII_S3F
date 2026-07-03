@@ -63,13 +63,13 @@ EXAMPLES
 │    └── 1.5.7 Unsecured Data Discovery
 │
 └── 1.6 Physical Surveillance
-     ├── 1.7.1 Observation of Routines
-     ├── 1.7.2 Building Layout Mapping
-     ├── 1.7.3 Security Camera Identification/Access
-     ├── 1.7.4 Access Control System Analysis
-     ├── 1.7.5 Employee Behavior Monitoring
-     ├── 1.7.6 Entry and Exit Point Analysis
-     └── 1.7.7 Vehicle Tracking
+     ├── 1.6.1 Observation of Routines
+     ├── 1.6.2 Building Layout Mapping
+     ├── 1.6.3 Security Camera Identification/Access
+     ├── 1.6.4 Access Control System Analysis
+     ├── 1.6.5 Employee Behavior Monitoring
+     ├── 1.6.6 Entry and Exit Point Analysis
+     └── 1.6.7 Vehicle Tracking
 
 2. Pretexting
 │
@@ -191,7 +191,8 @@ EXAMPLES
 │    ├── 4.1.3 Exclusive Offers
 │    ├── 4.1.4 Deadline Pressure
 │    ├── 4.1.5 One-Time Opportunity
-│    └── 4.1.6 Impending Loss
+│    ├── 4.1.6 Impending Loss
+│    └── 4.1.7 Financial Penalty Threat
 │
 ├── 4.2 Authority
 │    ├── 4.2.1 Expert Endorsement
@@ -199,7 +200,8 @@ EXAMPLES
 │    ├── 4.2.3 Uniform/Title
 │    ├── 4.2.4 Celebrity Influence
 │    ├── 4.2.5 Official Communication
-│    └── 4.2.6 Perceived Status
+│    ├── 4.2.6 Perceived Status
+│    └── 4.2.7 Organizational Hierarchy
 │
 ├── 4.3 Social Proof
 │    ├── 4.3.1 Testimonials/Reviews
@@ -208,13 +210,14 @@ EXAMPLES
 │    ├── 4.3.4 Endorsements
 │    └── 4.3.5 Community Engagement
 │
-├── 4.4 Reciprocity
+├── 4.4 Liking & Rapport
 │    ├── 4.4.1 Mirroring
 │    ├── 4.4.2 Similarity/Common Ground
 │    ├── 4.4.3 Compliments
 │    ├── 4.4.4 Cooperation
-│    ├── 4.4.6 Indebtedness Creation
-│    └── 4.6.7 Societal Obligation
+│    ├── 4.4.5 Building Trust
+│    ├── 4.4.6 Active Listening
+│    └── 4.4.7 Charm & Charisma
 │
 ├── 4.5 Commitment & Consistency
 │    ├── 4.5.1 Small Initial Requests
@@ -229,7 +232,9 @@ EXAMPLES
      ├── 4.6.2 Concessions
      ├── 4.6.3 “Free Samples”
      ├── 4.6.4 Indebtedness Creation
-     └── 4.6.5 Obligation Exploitation
+     ├── 4.6.5 Obligation Exploitation
+     ├── 4.6.6 Reciprocal Disclosure
+     └── 4.6.7 Door-in-the-Face Technique
 
 5. Exploit Trust
 │
@@ -257,19 +262,23 @@ EXAMPLES
 │    ├── 5.3.6 Manufacturer Exploitation
 │    └── 5.3.7 Code Injection
 │
-├── 5.5 Unsecured Systems
-│    ├── 5.5.1 Default Open Systems/DBs
-│    ├── 5.5.2 Unpatched Systems/Lack of Software Updates
-│    ├── 5.5.3 Misconfigurations
-│    ├── 5.5.5 Lack of Encryption
-│    └── 5.5.6 Weak Authentication
+├── 5.4 Unsecured Systems
+│    ├── 5.4.1 Default Open Systems/DBs
+│    ├── 5.4.2 Unpatched Systems/Lack of Software Updates
+│    ├── 5.4.3 Misconfigurations
+│    ├── 5.4.4 Unsecured APIs
+│    ├── 5.4.5 Lack of Encryption
+│    ├── 5.4.6 Weak Authentication
+│    └── 5.4.7 Outdated Software
 │
-└── 5.6 Physical Access
-     ├── 5.6.1 Unsecured Entrances
-     ├── 5.6.2 Tailgating
-     ├── 5.6.3 Lock Picking
-     ├── 5.6.4 Key Card Duplication
-     └── 5.6.5 Shoulder Surfing
+└── 5.5 Physical Access
+     ├── 5.5.1 Unsecured Entrances
+     ├── 5.5.2 Tailgating
+     ├── 5.5.3 Lock Picking
+     ├── 5.5.4 Key Card Duplication
+     ├── 5.5.5 Shoulder Surfing
+     ├── 5.5.6 Dumpster Diving (Physical)
+     └── 5.5.7 Badge Cloning
 
 6. Weaponize Trust
 │
@@ -300,11 +309,17 @@ EXAMPLES
 │    ├── 6.4.1 Gaslighting
 │    ├── 6.4.2 Love Bombing
 │    ├── 6.4.3 Guilt Tripping
+│    ├── 6.4.4 Isolation
+│    ├── 6.4.5 Triangulation
 │    ├── 6.4.6 Creating Dependency
 │    └── 6.4.7 Coercion
 │
-└── 6.6 Trust as a Vulnerability
-     ├── 6.6.1 Exploiting Kindness
-     ├── 6.6.2 Creating a Sense of Obligation
-     └── 6.6.4 Using Personal Relationships
+└── 6.5 Trust as a Vulnerability
+     ├── 6.5.1 Exploiting Kindness
+     ├── 6.5.2 Creating a Sense of Obligation
+     ├── 6.5.3 Exploiting Professional Courtesy
+     ├── 6.5.4 Using Personal Relationships
+     ├── 6.5.5 Taking Advantage of Politeness
+     ├── 6.5.6 Leveraging Cultural Norms
+     └── 6.5.7 Exploiting Altruism
 
